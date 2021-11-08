@@ -1,0 +1,19 @@
+{
+  "name": "rn-template-ts",
+  "version": "0.0.1",
+  "description": "Clean and minimalist React Native template for a quick start with TypeScript.",
+  "files": [
+    "template",
+    "template.config.js"
+  ],
+  "repository": "https://github.com/mustafaakb/rn-template-ts.git",
+  "keywords": [
+    "react-native",
+    "typescript",
+    "jest",
+    "template",
+    "boilerplate"
+  ],
+  "author": "Mustafa Akbas <mustafa.akbas@outlook.com>",
+  "license": "MIT"
+}
