@@ -7,8 +7,11 @@
  * Developed by Mustafa Akbas
  */
 
+import HeartFilled from './HeartFilled.svg';
 import Home from './Home.svg';
 import NoProfile from './NoProfile.svg';
-import HeartFilled from './HeartFilled.svg';
+import Plus from './Plus.svg';
+import Search from './Search.svg';
+import Shopping from './Shopping.svg';
 
-export {Home, NoProfile, HeartFilled};
+export {Home, NoProfile, HeartFilled, Plus, Search, Shopping};

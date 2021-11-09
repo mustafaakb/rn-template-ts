@@ -10,17 +10,10 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
-import {Icons} from './assets';
+import {StyleSheet, Text, useColorScheme, View} from 'react-native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
+import {Icons} from './assets';
+import {AppNavigator} from './navigators';
 
 const Section: React.FC<{
   title: string;
@@ -58,16 +51,7 @@ const App = () => {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Section title="Hello World" />
-      </ScrollView>
-    </SafeAreaView>
-  );
+  return <AppNavigator />;
 };
 
 const styles = StyleSheet.create({
