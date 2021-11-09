@@ -6,6 +6,7 @@
  * https://github.com/react-native-community/react-native-template-typescript
  *
  * @format
+ * Developed by Mustafa Akbas
  */
 
 import React from 'react';
