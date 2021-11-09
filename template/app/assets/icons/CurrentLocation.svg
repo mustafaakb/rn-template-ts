@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="19.196" height="19.197" viewBox="0 0 19.196 19.197">
+    <defs>
+        <style>
+            .cls-1,.cls-3{fill:none}.cls-1{stroke:#141519;stroke-linecap:round;stroke-width:1.3px}.cls-2{stroke:none}
+        </style>
+    </defs>
+    <g id="Group_14291" transform="translate(-24.103 -186.438)">
+        <g id="Group_14292" transform="translate(24.753 187.088)">
+            <g id="Ellipse_180" class="cls-1" transform="translate(2.704 2.425)">
+                <circle cx="6.245" cy="6.245" r="6.245" class="cls-2"/>
+                <circle cx="6.245" cy="6.245" r="5.595" class="cls-3"/>
+            </g>
+            <g id="Ellipse_181" class="cls-1" transform="translate(5.201 4.923)">
+                <circle cx="3.747" cy="3.747" r="3.747" class="cls-2"/>
+                <circle cx="3.747" cy="3.747" r="3.097" class="cls-3"/>
+            </g>
+            <g id="Group_14123">
+                <path id="Path_10311" d="M-11025-8644.9v2.9" class="cls-1" transform="translate(11033.948 8644.904)"/>
+                <path id="Path_10337" d="M-11025-8644.9v2.9" class="cls-1" transform="translate(11033.948 8659.892)"/>
+                <path id="Path_10338" d="M0 0v2.91" class="cls-1" transform="rotate(90 4.474 13.422)"/>
+                <path id="Path_10339" d="M0 0v2.91" class="cls-1" transform="rotate(90 -3.02 5.929)"/>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -19,7 +19,7 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-
+import {Icons} from './assets';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 const Section: React.FC<{
@@ -28,6 +28,7 @@ const Section: React.FC<{
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <View style={styles.sectionContainer}>
+      <Icons.Home width="30" height="30" />
       <Text
         style={[
           styles.sectionTitle,
