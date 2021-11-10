@@ -4,7 +4,6 @@
  * Generally speaking, it will contain an auth flow (registration, login, forgot password)
  * and a "main" flow which the user will use once logged in.
  */
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {
   DarkTheme,
   DefaultTheme,
