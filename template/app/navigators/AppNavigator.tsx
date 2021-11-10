@@ -13,14 +13,8 @@ import {
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
 import {useColorScheme} from 'react-native';
-import {
-  DiscoverScreen,
-  PaymentScreen,
-  RegisterScreen,
-  SettingsScreen,
-  WelcomeScreen,
-} from '../screens';
-import {selectIcon, selectLabel} from './helpers';
+import {RegisterScreen} from '../screens';
+import MainStack from './MainStack';
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -47,7 +41,6 @@ export type TabNavigatorParamList = {
 };
 
 const Stack = createNativeStackNavigator<NavigatorParamList>();
-const TabStack = createBottomTabNavigator<TabNavigatorParamList>();
 
 const AppStack = () => {
   return (
@@ -57,25 +50,7 @@ const AppStack = () => {
       }}
       initialRouteName="register">
       <Stack.Screen name="register" component={RegisterScreen} />
-      <Stack.Screen name="main">
-        {() => (
-          <TabStack.Navigator
-            screenOptions={({route}) => ({
-              headerShown: false,
-              headerTransparent: true,
-              tabBarIcon: ({focused}) => {
-                return selectIcon(route.name, focused);
-              },
-              tabBarLabel: ({focused}) => selectLabel(route.name),
-            })}>
-            <TabStack.Screen name="home" component={WelcomeScreen} />
-            <TabStack.Screen name="search" component={DiscoverScreen} />
-            <TabStack.Screen name="upload" component={WelcomeScreen} />
-            <TabStack.Screen name="basket" component={PaymentScreen} />
-            <TabStack.Screen name="profile" component={SettingsScreen} />
-          </TabStack.Navigator>
-        )}
-      </Stack.Screen>
+      <Stack.Screen name="main" component={MainStack} />
     </Stack.Navigator>
   );
 };
