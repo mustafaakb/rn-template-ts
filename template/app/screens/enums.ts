@@ -1,10 +1,13 @@
 export const SCREENS = {
-  home: 'home',
+  // ##
   register: 'register',
-  profile: 'profile',
-  welcome: 'welcome',
+
+  // ##
+  main: 'main',
+  home: 'home',
   search: 'search',
+  profile: 'profile',
   upload: 'upload',
-  chat: 'chat',
   basket: 'basket',
+  chat: 'chat',
 };

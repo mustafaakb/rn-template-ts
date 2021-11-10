@@ -12,12 +12,15 @@ import {
 } from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
-import {useColorScheme, View} from 'react-native';
-import {Text} from 'react-native-svg';
-import {RegisterScreen, SettingsScreen, WelcomeScreen} from '../screens';
-import {PaymentScreen} from '../screens/basket';
-import {DiscoverScreen} from '../screens/search';
-import {selectIcon} from './helpers';
+import {useColorScheme} from 'react-native';
+import {
+  DiscoverScreen,
+  PaymentScreen,
+  RegisterScreen,
+  SettingsScreen,
+  WelcomeScreen,
+} from '../screens';
+import {selectIcon, selectLabel} from './helpers';
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -33,10 +36,10 @@ import {selectIcon} from './helpers';
  */
 export type NavigatorParamList = {
   register: undefined;
-  home: undefined;
+  main: undefined;
 };
 export type TabNavigatorParamList = {
-  welcome: undefined;
+  home: undefined;
   search: undefined;
   upload: undefined;
   basket: undefined;
@@ -54,7 +57,7 @@ const AppStack = () => {
       }}
       initialRouteName="register">
       <Stack.Screen name="register" component={RegisterScreen} />
-      <Stack.Screen name="home">
+      <Stack.Screen name="main">
         {() => (
           <TabStack.Navigator
             screenOptions={({route}) => ({
@@ -63,13 +66,9 @@ const AppStack = () => {
               tabBarIcon: ({focused}) => {
                 return selectIcon(route.name, focused);
               },
-              tabBarLabel: ({focused}) => (
-                <View style={{backgroundColor: 'yellow'}}>
-                  <Text> {route.name}</Text>
-                </View>
-              ),
+              tabBarLabel: ({focused}) => selectLabel(route.name),
             })}>
-            <TabStack.Screen name="welcome" component={WelcomeScreen} />
+            <TabStack.Screen name="home" component={WelcomeScreen} />
             <TabStack.Screen name="search" component={DiscoverScreen} />
             <TabStack.Screen name="upload" component={WelcomeScreen} />
             <TabStack.Screen name="basket" component={PaymentScreen} />

@@ -8,7 +8,7 @@ export const DiscoverScreen = ({navigation}) => {
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
       <Button
         title="Discover"
-        onPress={() => navigation.navigate(SCREENS.home)}
+        onPress={() => navigation.navigate(SCREENS.profile)}
       />
     </View>
   );

@@ -8,7 +8,7 @@ export const RegisterScreen = ({navigation}) => {
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
       <Button
         title="Register and Login"
-        onPress={() => navigation.navigate(SCREENS.home)}
+        onPress={() => navigation.navigate(SCREENS.main)}
       />
     </View>
   );

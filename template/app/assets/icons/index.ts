@@ -10,8 +10,9 @@
 import HeartFilled from './HeartFilled.svg';
 import Home from './Home.svg';
 import NoProfile from './NoProfile.svg';
+import PersonPlus from './PersonPlus.svg';
 import Plus from './Plus.svg';
 import Search from './Search.svg';
 import Shopping from './Shopping.svg';
 
-export {Home, NoProfile, HeartFilled, Plus, Search, Shopping};
+export {Home, NoProfile, HeartFilled, Plus, Search, Shopping, PersonPlus};
