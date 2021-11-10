@@ -1,4 +1,4 @@
-import * as Fonts from './fonts';
+import {Fonts} from './fonts';
 import * as Icons from './icons';
 
 export {Icons, Fonts};

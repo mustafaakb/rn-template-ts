@@ -35,6 +35,7 @@ export const StyledText = ({
         normal && {fontFamily: Fonts.medium},
         lighter && {fontFamily: Fonts.regular},
         lightest && {fontFamily: Fonts.light},
+        {color: 'black'},
         fontSize && {fontSize: normalizeFont(fontSize)},
         style,
       ]}

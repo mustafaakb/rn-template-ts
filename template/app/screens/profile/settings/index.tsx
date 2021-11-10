@@ -5,10 +5,10 @@ import {StyledText, StyledViewCenter} from '../../../components';
 export const SettingsScreen = () => {
   return (
     <StyledViewCenter>
-      <StyledText lighter fontSize={10}>
+      <StyledText boldest fontSize={15} style={{color: 'red'}}>
         Profile/Settings Screen
       </StyledText>
-      <Text style={{fontSize: 10}}>Profile/Settings Screen</Text>
+      <Text style={{fontSize: 20}}>Styless Text</Text>
     </StyledViewCenter>
   );
 };

@@ -1,12 +1,10 @@
 import React from 'react';
 import {StyledText, StyledViewCenter} from '../../../components';
 
-export const PaymentScreen = () => {
+export const UploadPhotoScreen = () => {
   return (
     <StyledViewCenter>
-      <StyledText bolder fontSize={18}>
-        Basket Screen
-      </StyledText>
+      <StyledText fontSize={20}>Upload Photo Screen</StyledText>
     </StyledViewCenter>
   );
 };

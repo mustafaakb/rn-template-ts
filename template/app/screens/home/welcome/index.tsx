@@ -4,7 +4,7 @@ import {StyledText, StyledViewCenter} from '../../../components';
 export const WelcomeScreen = () => {
   return (
     <StyledViewCenter>
-      <StyledText boldest fontSize={20}>
+      <StyledText lightest fontSize={25}>
         Home Screen
       </StyledText>
     </StyledViewCenter>

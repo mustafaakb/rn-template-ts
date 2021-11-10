@@ -6,6 +6,7 @@ import {
   DiscoverScreen,
   PaymentScreen,
   SettingsScreen,
+  UploadPhotoScreen,
   WelcomeScreen,
 } from '../screens';
 import {SCREENS} from '../screens/enums';
@@ -111,7 +112,7 @@ const MainStack = () => {
       })}>
       <TabStack.Screen name="home" component={WelcomeScreen} />
       <TabStack.Screen name="search" component={DiscoverScreen} />
-      <TabStack.Screen name="upload" component={WelcomeScreen} />
+      <TabStack.Screen name="upload" component={UploadPhotoScreen} />
       <TabStack.Screen name="basket" component={PaymentScreen} />
       <TabStack.Screen name="profile" component={SettingsScreen} />
     </TabStack.Navigator>

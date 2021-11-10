@@ -1,6 +1,7 @@
-import _ from 'lodash';
+import * as _ from 'lodash';
 import React from 'react';
-import {Pressable, StyleSheet, Text} from 'react-native';
+import {Pressable, StyleSheet} from 'react-native';
+import {StyledText} from '../text';
 type ButtonProps = {
   onPress?: () => void;
   title?: string;
@@ -14,7 +15,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   title: {
-    fontSize: 20,
+    fontSize: 30,
     textAlign: 'center',
   },
 });
@@ -25,7 +26,9 @@ export const Button = ({
 }: ButtonProps) => {
   return (
     <Pressable onPress={onPress} style={styles.button}>
-      <Text style={styles.title}>{title}</Text>
+      <StyledText lighter style={styles.title}>
+        {title}
+      </StyledText>
     </Pressable>
   );
 };
