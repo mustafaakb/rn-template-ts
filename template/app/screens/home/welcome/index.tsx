@@ -1,13 +1,12 @@
 import React from 'react';
-import {View} from 'react-native';
-import StyledText from '../../../components/atoms/text';
+import {StyledText, StyledViewCenter} from '../../../components';
 
 export const WelcomeScreen = () => {
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+    <StyledViewCenter>
       <StyledText boldest fontSize={20}>
         Home Screen
       </StyledText>
-    </View>
+    </StyledViewCenter>
   );
 };

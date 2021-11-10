@@ -1,7 +1,7 @@
 import React from 'react';
 import {View} from 'react-native';
 
-const StyledViewCenter = ({
+export const StyledViewCenter = ({
   children,
   ...props
 }: {
@@ -15,5 +15,3 @@ const StyledViewCenter = ({
     </View>
   );
 };
-
-export default StyledViewCenter;

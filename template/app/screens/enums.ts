@@ -2,18 +2,18 @@ export const SCREENS = {
   // 1
   register: 'register',
 
-  // 1
+  // 2
   main: 'main',
-  // 1.1
+  // 2.1
   home: 'home',
-  // 1.2
+  // 2.2
   search: 'search',
-  // 1.3
+  // 2.3
   upload: 'upload',
-  // 1.4
+  // 2.4
   basket: 'basket',
-  // 1.5
+  // 2.5
   profile: 'profile',
-  // 1.6
+  // 2.6
   chat: 'chat',
 };

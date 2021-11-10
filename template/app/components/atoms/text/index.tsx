@@ -16,7 +16,7 @@ type StyledTextProps = {
   style?: {};
 };
 
-const StyledText = ({
+export const StyledText = ({
   bolder,
   boldest,
   lighter,
@@ -43,5 +43,3 @@ const StyledText = ({
     </Text>
   );
 };
-
-export default StyledText;
