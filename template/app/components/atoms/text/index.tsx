@@ -1,10 +1,7 @@
 import React from 'react';
 import {Text} from 'react-native';
 import {Fonts} from '../../../assets/fonts';
-
-const normalizeFont = (size: number) => {
-  return size * 2;
-};
+import {Mixins} from '../../../theme';
 
 type StyledTextProps = {
   bolder?: boolean;
@@ -36,7 +33,7 @@ export const StyledText = ({
         lighter && {fontFamily: Fonts.regular},
         lightest && {fontFamily: Fonts.light},
         {color: 'black'},
-        fontSize && {fontSize: normalizeFont(fontSize)},
+        fontSize && {fontSize: Mixins.scaleFont(fontSize)},
         style,
       ]}
       {...props}>

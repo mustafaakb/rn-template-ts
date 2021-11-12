@@ -1,6 +1,6 @@
-import {scaleSize} from './mixins';
+import {scaleWidth} from './mixins';
 
-export const SCALE_18 = scaleSize(18);
-export const SCALE_16 = scaleSize(16);
-export const SCALE_12 = scaleSize(12);
-export const SCALE_8 = scaleSize(8);
+export const SCALE_18 = scaleWidth(18);
+export const SCALE_16 = scaleWidth(16);
+export const SCALE_12 = scaleWidth(12);
+export const SCALE_8 = scaleWidth(8);
