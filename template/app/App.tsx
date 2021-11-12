@@ -10,10 +10,15 @@
  */
 
 import React from 'react';
+import {AxiosProvider} from './api/axiosProvider';
 import {AppNavigator} from './navigators';
 
 const App = () => {
-  return <AppNavigator />;
+  return (
+    <AxiosProvider>
+      <AppNavigator />
+    </AxiosProvider>
+  );
 };
 
 export default App;

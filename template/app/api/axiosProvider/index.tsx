@@ -3,6 +3,7 @@ import Axios, {AxiosInstance} from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import React, {createContext, ReactNode, useEffect, useMemo} from 'react';
 import {apiEndpoints} from '..';
+import {API_URL} from '../api.config';
 import {mockEndpoints} from '../axiosMock/mock.endpoints';
 
 interface IAxiosContext {
@@ -13,10 +14,14 @@ export const AxiosContext = createContext<IAxiosContext>({
   axios: Axios.create(),
 });
 
-export const AxiosProvider = ({children}: {children: ReactNode}): Element => {
+export const AxiosProvider = ({
+  children,
+}: {
+  children: ReactNode;
+}): JSX.Element => {
   const axios = useMemo(() => {
     const axiosInstance = Axios.create({
-      baseURL: 'http://ip.jsontest.com',
+      baseURL: API_URL,
       headers: {
         'Content-Type': 'application/json',
       },
