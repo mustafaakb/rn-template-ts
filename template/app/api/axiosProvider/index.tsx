@@ -1,10 +1,8 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Axios, {AxiosInstance} from 'axios';
-import MockAdapter from 'axios-mock-adapter';
 import React, {createContext, ReactNode, useEffect, useMemo} from 'react';
 import {apiEndpoints} from '..';
 import {API_URL} from '../api.config';
-import {mockEndpoints} from '../axiosMock/mock.endpoints';
 
 interface IAxiosContext {
   axios: AxiosInstance;
@@ -65,15 +63,8 @@ export const AxiosProvider = ({
     return axiosInstance;
   }, []);
 
-  const setMockInUse = async (setMock: boolean) => {
-    const mock = await new MockAdapter(axios, {onNoMatch: 'passthrough'});
-    if (setMock) {
-      mockEndpoints(mock);
-    }
-  };
-
   useEffect(() => {
-    setMockInUse(true);
+    //setMockInUse(true, axios);
   });
 
   return (
