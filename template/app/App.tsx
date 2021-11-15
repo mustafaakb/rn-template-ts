@@ -10,14 +10,18 @@
  */
 
 import React from 'react';
+import {Provider as StoreProvider} from 'react-redux';
 import {AxiosProvider} from './api/axiosProvider';
 import {AppNavigator} from './navigators';
+import {store} from './store';
 
 const App = () => {
   return (
-    <AxiosProvider>
-      <AppNavigator />
-    </AxiosProvider>
+    <StoreProvider store={store}>
+      <AxiosProvider>
+        <AppNavigator />
+      </AxiosProvider>
+    </StoreProvider>
   );
 };
 
