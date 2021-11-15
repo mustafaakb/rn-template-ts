@@ -48,17 +48,23 @@ export function padding(
   return dimensions(top, right, bottom, left, 'padding');
 }
 
-export function boxShadow(
-  color: string,
-  offset = {height: 2, width: 2},
-  radius = 8,
+export function styleShadow(
+  elevation = 2,
+  bg = '#FFF',
+  color = '#000',
+  offset = {width: 0, height: elevation},
   opacity = 0.2,
+  radius = elevation,
 ) {
   return {
+    // both IOS and Android >= 28
+    backgroundColor: bg,
     shadowColor: color,
+    // IOS
     shadowOffset: offset,
     shadowOpacity: opacity,
     shadowRadius: radius,
-    elevation: radius,
+    // Android
+    elevation: elevation,
   };
 }

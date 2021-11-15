@@ -1,4 +1,3 @@
-import * as _ from 'lodash';
 import React from 'react';
 import {Pressable, StyleSheet} from 'react-native';
 import {StyledText} from '../text';
@@ -10,7 +9,7 @@ type ButtonProps = {
 const styles = StyleSheet.create({
   button: {
     padding: 10,
-    backgroundColor: '#87AAAA',
+    backgroundColor: '#F4F9F9',
     borderRadius: 10,
     justifyContent: 'center',
   },
@@ -20,10 +19,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export const Button = ({
-  title = 'Press to Button',
-  onPress = _.noop(),
-}: ButtonProps) => {
+export const Button = ({title = 'Press to Button', onPress}: ButtonProps) => {
   return (
     <Pressable onPress={onPress} style={styles.button}>
       <StyledText lighter style={styles.title}>
