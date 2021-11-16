@@ -14,6 +14,6 @@ export const setMockInUse = async (setMock: boolean, axios: AxiosInstance) => {
 };
 
 export const mockEndpoints = (mock: MockAdapter): void => {
-  mock.onGet(apiEndpoints.LOGIN()).reply(200, SUCCESS.LOGIN);
+  mock.onPost(apiEndpoints.LOGIN()).reply(200, SUCCESS.LOGIN);
   mock.onPost(apiEndpoints.REGISTER()).reply(200, SUCCESS.REGISTER);
 };
