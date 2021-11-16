@@ -1,10 +1,10 @@
-import {Counter, StyledText, StyledViewCenter} from '@app/components';
-import {useAppDispatch, useAppSelector} from '@app/store';
-import {decrement, increment} from '@app/store/reducers/counter';
 import React from 'react';
 import {View} from 'react-native';
+import {Counter, StyledText, StyledViewCenter} from '../../../components';
+import {useAppDispatch, useAppSelector} from '../../../store';
+import {decrement, increment} from '../../../store/reducers/counter';
 
-export const WelcomeScreen = () => {
+export const OneScreen = () => {
   const count = useAppSelector(state => state.counter.value);
   const dispatch = useAppDispatch();
 
