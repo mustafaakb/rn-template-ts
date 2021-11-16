@@ -1,9 +1,7 @@
+import {apiEndpoints, AxiosContext} from '@app/api';
+import {SCREENS} from '@app/screens';
 import React, {useContext} from 'react';
-import {View} from 'react-native';
-import {apiEndpoints} from '../../../api';
-import {AxiosContext} from '../../../api/axiosProvider';
-import {Button} from '../../../components';
-import {SCREENS} from '../../enums';
+import {Button, View} from 'react-native';
 
 export const RegisterScreen = ({navigation}) => {
   const {axios} = useContext(AxiosContext);

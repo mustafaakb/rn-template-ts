@@ -1,2 +1,3 @@
-export * from './params.type';
+export {AxiosContext} from './axiosProvider';
 export * from './endpoints';
+export * from './params.type';
