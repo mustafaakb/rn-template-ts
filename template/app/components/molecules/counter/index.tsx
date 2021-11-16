@@ -14,27 +14,24 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 10,
-    borderWidth: 1,
+    borderRadius: 5,
   },
 });
 
-const Counter = ({count, onIncrement, onDecrement}: ICounter) => {
+export const Counter = ({count, onIncrement, onDecrement}: ICounter) => {
   return (
     <View style={[styles.counterRow, styleShadow(5)]}>
       <Pressable onPress={onDecrement}>
-        <StyledText boldest fontSize={20}>
+        <StyledText boldest fontSize={20} style={{margin: 5}}>
           -
         </StyledText>
       </Pressable>
       <StyledText>{count}</StyledText>
       <Pressable onPress={onIncrement}>
-        <StyledText boldest fontSize={20}>
+        <StyledText boldest fontSize={20} style={{margin: 5}}>
           +
         </StyledText>
       </Pressable>
     </View>
   );
 };
-
-export default Counter;
