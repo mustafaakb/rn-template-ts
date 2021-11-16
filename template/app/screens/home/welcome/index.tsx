@@ -1,7 +1,7 @@
 import React from 'react';
 import {View} from 'react-native';
 import {StyledText, StyledViewCenter} from '../../../components';
-import Counter from '../../../components/molecules/counter';
+import {Counter} from '../../../components/molecules/counter';
 import {useAppDispatch, useAppSelector} from '../../../store';
 import {decrement, increment} from '../../../store/reducers/counter';
 
