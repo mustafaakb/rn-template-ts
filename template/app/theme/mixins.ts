@@ -4,7 +4,7 @@ const WINDOW_WIDTH = Dimensions.get('window').width;
 const WINDOW_HEIGHT = Dimensions.get('window').height;
 
 const guidelineBaseWidth = 375;
-const guidelineBaseHeight = 375;
+const guidelineBaseHeight = 812;
 
 export const scaleWidth = (size: number) =>
   (WINDOW_WIDTH / guidelineBaseWidth) * size;
@@ -21,10 +21,10 @@ function dimensions(
   property: string,
 ) {
   let styles = {
-    [`${property}Top`]: top,
-    [`${property}Right`]: right,
-    [`${property}Bottom`]: bottom,
-    [`${property}Left`]: left,
+    [`${property}Top`]: scaleHeight(top),
+    [`${property}Right`]: scaleWidth(right),
+    [`${property}Bottom`]: scaleHeight(bottom),
+    [`${property}Left`]: scaleWidth(left),
   };
 
   return styles;
@@ -32,18 +32,18 @@ function dimensions(
 
 export function margin(
   top: number,
-  right: number,
-  bottom: number,
-  left: number,
+  right?: number,
+  bottom?: number,
+  left?: number,
 ) {
   return dimensions(top, right, bottom, left, 'margin');
 }
 
 export function padding(
   top: number,
-  right: number,
-  bottom: number,
-  left: number,
+  right?: number,
+  bottom?: number,
+  left?: number,
 ) {
   return dimensions(top, right, bottom, left, 'padding');
 }
@@ -57,7 +57,6 @@ export function styleShadow(
   radius = elevation,
 ) {
   return {
-    // both IOS and Android >= 28
     backgroundColor: bg,
     shadowColor: color,
     // IOS

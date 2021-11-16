@@ -8,7 +8,7 @@ export const StyledViewCenter = ({
   ...props
 }: {
   children: React.ReactNode;
-  style: any;
+  style?: any;
 }) => {
   return (
     <View
