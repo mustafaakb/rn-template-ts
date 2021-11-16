@@ -1,10 +1,14 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {Text} from 'react-native';
+import {StyledText, StyledViewCenter} from '../../../components';
 
 export const SettingsScreen = () => {
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Profile/Settings Screen</Text>
-    </View>
+    <StyledViewCenter>
+      <StyledText boldest fontSize={15} style={{color: 'red'}}>
+        Profile/Settings Screen
+      </StyledText>
+      <Text style={{fontSize: 20}}>Styless Text</Text>
+    </StyledViewCenter>
   );
 };

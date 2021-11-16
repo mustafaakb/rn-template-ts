@@ -1,10 +1,12 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {StyledText, StyledViewCenter} from '../../../components';
 
 export const PaymentScreen = () => {
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Basket Screen</Text>
-    </View>
+    <StyledViewCenter>
+      <StyledText bolder fontSize={18}>
+        Basket Screen
+      </StyledText>
+    </StyledViewCenter>
   );
 };
