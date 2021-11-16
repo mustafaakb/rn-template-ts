@@ -1,8 +1,9 @@
-import {Counter, StyledText, StyledViewCenter} from '@app/components';
-import {useAppDispatch, useAppSelector} from '@app/store';
-import {decrement, increment} from '@app/store/reducers/counter';
 import React from 'react';
 import {View} from 'react-native';
+import {StyledText, StyledViewCenter} from '../../../components';
+import {Counter} from '../../../components/molecules/counter';
+import {useAppDispatch, useAppSelector} from '../../../store';
+import {decrement, increment} from '../../../store/reducers/counter';
 
 export const WelcomeScreen = () => {
   const count = useAppSelector(state => state.counter.value);

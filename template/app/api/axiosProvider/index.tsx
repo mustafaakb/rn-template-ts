@@ -1,8 +1,6 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import Axios, {AxiosInstance} from 'axios';
 import React, {createContext, ReactNode, useEffect, useMemo} from 'react';
-import {apiEndpoints} from '..';
-import {API_URL} from '../api.config';
+import {API_KEY, API_URL} from '../api.config';
 
 interface IAxiosContext {
   axios: AxiosInstance;
@@ -22,43 +20,45 @@ export const AxiosProvider = ({
       baseURL: API_URL,
       headers: {
         'Content-Type': 'application/json',
+        'x-api-key': API_KEY,
       },
     });
+    //axiosInstance.defaults.headers.common['x-api-key'] = API_KEY; // Replace this with your API Key
 
-    axiosInstance.interceptors.request.use(
-      async config => {
-        const token = await AsyncStorage.getItem('Token');
-        if (token) {
-          // @ts-ignore
-          config.headers.Authorization = `Bearer ${token}`;
-        }
-        return config;
-      },
-      error => {
-        Promise.reject(error);
-      },
-    );
+    // axiosInstance.interceptors.request.use(
+    //   async config => {
+    //     const token = await AsyncStorage.getItem('Token');
+    //     if (token) {
+    //       // @ts-ignore
+    //       config.headers.Authorization = `Bearer ${token}`;
+    //     }
+    //     return config;
+    //   },
+    //   error => {
+    //     Promise.reject(error);
+    //   },
+    // );
 
-    axiosInstance.interceptors.response.use(
-      async res => {
-        const token = await AsyncStorage.getItem('Token');
-        if (token) {
-          res.headers.Authorization = `Bearer ${token}`;
-        }
-        return res;
-      },
-      async error => {
-        if (error.config.url !== apiEndpoints.LOGIN() && error.response) {
-          if (error.response.status === 401 && !error.config._retry) {
-            const JWT = ''; //TODO: Refresh Token // await auth().currentUser?.getIdToken(true);
-            if (JWT) {
-              axios.defaults.headers.common.Authorization = `Bearer ${JWT}`;
-            }
-            await axios.post(apiEndpoints.LOGIN());
-          }
-        }
-      },
-    );
+    // axiosInstance.interceptors.response.use(
+    //   async res => {
+    //     const token = await AsyncStorage.getItem('Token');
+    //     if (token) {
+    //       res.headers.Authorization = `Bearer ${token}`;
+    //     }
+    //     return res;
+    //   },
+    //   async error => {
+    //     if (error.config.url !== apiEndpoints.LOGIN() && error.response) {
+    //       if (error.response.status === 401 && !error.config._retry) {
+    //         const JWT = ''; //TODO: Refresh Token // await auth().currentUser?.getIdToken(true);
+    //         if (JWT) {
+    //           axios.defaults.headers.common.Authorization = `Bearer ${JWT}`;
+    //         }
+    //         await axios.post(apiEndpoints.LOGIN());
+    //       }
+    //     }
+    //   },
+    // );
 
     return axiosInstance;
   }, []);

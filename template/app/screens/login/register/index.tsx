@@ -7,10 +7,10 @@ import {SCREENS} from '../../enums';
 
 export const RegisterScreen = ({navigation}) => {
   const {axios} = useContext(AxiosContext);
-  function handleLogin() {
+  const handleLogin = async () => {
     //const params: REGISTERParams = {};
     axios
-      .post(apiEndpoints.LOGIN())
+      .get(apiEndpoints.IMAGE_SEARCH(), {params: {limit: 1, size: 'full'}})
       .then(({data}) => {
         console.log({data});
         navigation.navigate(SCREENS.main);
@@ -18,7 +18,7 @@ export const RegisterScreen = ({navigation}) => {
       .catch(err => {
         console.log({err});
       });
-  }
+  };
 
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
