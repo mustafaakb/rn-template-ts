@@ -5,9 +5,7 @@ import {Button, StyledViewCenter} from '../../../components';
 import {SCREENS} from '../../enums';
 
 export const DiscoverScreen = ({navigation}) => {
-  const {data, isLoading} = apiClient.useGetAllImage();
-  console.log({uri: data?.data[0].url});
-
+  const imageParams = apiClient.useGetImageParams(3, 100, 'DESC');
   return (
     <StyledViewCenter>
       <Button
@@ -15,7 +13,7 @@ export const DiscoverScreen = ({navigation}) => {
         onPress={() => navigation.navigate(SCREENS.profile)}
       />
       <Image
-        source={{uri: data?.data[0].url}}
+        source={{uri: imageParams.data?.data[0].url}}
         style={{width: '90%', height: 200, borderWidth: 1}}
       />
     </StyledViewCenter>

@@ -1,7 +1,8 @@
 // export const ApiClient = createContext({});
 
-import {useQuery} from 'react-query';
-import {apiEndpoints} from '..';
+import {AxiosResponse} from 'axios';
+import {useQuery, UseQueryResult} from 'react-query';
+import {apiDataType, apiEndpoints} from '..';
 import {axiosInstance} from '../axiosProvider';
 
 // export const ApiClientProvider = ({children}: {children: React.ReactNode}) => {
@@ -25,7 +26,10 @@ import {axiosInstance} from '../axiosProvider';
 //   return <ApiClient.Provider value={apiClient}>{children}</ApiClient.Provider>;
 // };
 
-export const useGetImage = () =>
+export const useGetImage = (): UseQueryResult<
+  AxiosResponse<any, any>,
+  unknown
+> =>
   useQuery({
     queryKey: ['dog', 'image'],
     queryFn: () => axiosInstance.get(apiEndpoints.IMAGE_SEARCH()),
@@ -35,4 +39,17 @@ export const useGetAllImage = () =>
   useQuery({
     queryKey: ['dog', 'image'],
     queryFn: () => axiosInstance.get(apiEndpoints.IMAGE_SEARCH()),
+  });
+
+export const useGetImageParams = (
+  limit: number,
+  page: number,
+  order: 'DESC' | 'ASC',
+) =>
+  useQuery({
+    queryKey: ['dog', 'image', 'params'],
+    queryFn: () =>
+      axiosInstance.get<apiDataType.IMAGE_SEARCH[]>(
+        apiEndpoints.IMAGE_SEARCH_PARAMS(limit, page, order),
+      ),
   });
