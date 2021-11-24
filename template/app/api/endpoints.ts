@@ -10,4 +10,6 @@ export const apiEndpoints = {
   IMAGE_SEARCH: () => '/images/search',
   IMAGE_SEARCH_PARAMS: (limit: number, page: number, order: 'DESC' | 'ASC') =>
     `/images/search?limit=${limit}&page=${page}&order=${order}`,
+  VOTE: () => '/votes',
+  VOTE_RESPONSE: (subId: string) => `/votes?sub_id=${subId}`,
 };

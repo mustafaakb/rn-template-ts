@@ -1,6 +1,6 @@
-import * as apiDataType from './api.data.type';
+import * as apiParamsType from './request.params.type';
+import * as apiDataType from './response.data.type';
 export {AxiosContext, AxiosProvider} from './axiosProvider';
 export * from './endpoints';
-export * from './params.type';
 export * from './reactQuery';
-export {apiDataType};
+export {apiDataType, apiParamsType};

@@ -1,8 +1,13 @@
 // export const ApiClient = createContext({});
 
-import {AxiosResponse} from 'axios';
-import {useQuery, UseQueryResult} from 'react-query';
-import {apiDataType, apiEndpoints} from '..';
+import axios, {AxiosResponse} from 'axios';
+import {
+  useMutation,
+  useQuery,
+  useQueryClient,
+  UseQueryResult,
+} from 'react-query';
+import {apiDataType, apiEndpoints, apiParamsType} from '..';
 import {axiosInstance} from '../axiosProvider';
 
 // export const ApiClientProvider = ({children}: {children: React.ReactNode}) => {
@@ -53,3 +58,17 @@ export const useGetImageParams = (
         apiEndpoints.IMAGE_SEARCH_PARAMS(limit, page, order),
       ),
   });
+
+export const usePostVote = () => {
+  const queryClient = useQueryClient();
+  return useMutation(
+    (variables: {params: apiParamsType.VOTEParams}) =>
+      axiosInstance.post(apiEndpoints.VOTE(), variables.params),
+    {
+      onSuccess: () => {
+        // ✅ refetch the comments list for our blog post
+        queryClient.invalidateQueries(['dog', 'image', 'params']);
+      },
+    },
+  );
+};
