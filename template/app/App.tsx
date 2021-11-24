@@ -9,11 +9,16 @@
  * Developed by Mustafa Akbas
  */
 
+import * as Sentry from '@sentry/react-native';
 import React from 'react';
 import {Provider as StoreProvider} from 'react-redux';
 import {AppQueryClientProvider, AxiosProvider} from './api';
 import {AppNavigator} from './navigators';
 import {store} from './store';
+import {sentryConfig} from './utils';
+
+Sentry.init(sentryConfig);
+
 
 const App = () => {
   return (
@@ -27,4 +32,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Sentry.wrap(App);

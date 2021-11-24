@@ -1,4 +1,5 @@
-import axios, {AxiosInstance} from 'axios';
+import * as Sentry from '@sentry/react-native';
+import axios, {AxiosError, AxiosInstance, AxiosResponse} from 'axios';
 import {API_KEY, API_URL} from '../api.config';
 
 export const axiosInstance: AxiosInstance = axios.create({
@@ -8,6 +9,14 @@ export const axiosInstance: AxiosInstance = axios.create({
     'x-api-key': API_KEY,
   },
 });
+
+axiosInstance.interceptors.response.use(
+  (response: AxiosResponse) => response,
+  (error: AxiosError) => {
+    Sentry.captureException(JSON.stringify(error));
+    return Promise.reject(error);
+  },
+);
 
 // axiosInstance.interceptors.response.use(
 //   async res => {
