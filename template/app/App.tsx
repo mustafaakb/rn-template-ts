@@ -11,7 +11,7 @@
 
 import React from 'react';
 import {Provider as StoreProvider} from 'react-redux';
-import {AxiosProvider} from './api/axiosProvider';
+import {AppQueryClientProvider, AxiosProvider} from './api';
 import {AppNavigator} from './navigators';
 import {store} from './store';
 
@@ -19,7 +19,9 @@ const App = () => {
   return (
     <StoreProvider store={store}>
       <AxiosProvider>
-        <AppNavigator />
+        <AppQueryClientProvider>
+          <AppNavigator />
+        </AppQueryClientProvider>
       </AxiosProvider>
     </StoreProvider>
   );

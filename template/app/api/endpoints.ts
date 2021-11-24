@@ -8,4 +8,8 @@ export const apiEndpoints = {
   ADD_PAYMENT_METHOD: () => '/ADD_PAYMENT_METHOD',
   // SEARCH
   IMAGE_SEARCH: () => '/images/search',
+  IMAGE_SEARCH_PARAMS: (limit: number, page: number, order: 'DESC' | 'ASC') =>
+    `/images/search?limit=${limit}&page=${page}&order=${order}`,
+  VOTE: () => '/votes',
+  VOTE_RESPONSE: (subId: string) => `/votes?sub_id=${subId}`,
 };

@@ -8,3 +8,9 @@ export type REGISTERParams = {
   password: string;
   name?: string;
 };
+
+export type VOTEParams = {
+  image_id: string;
+  value: number;
+  sub_id: string;
+};
