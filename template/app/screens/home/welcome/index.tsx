@@ -1,9 +1,10 @@
-import React from 'react';
+import {StyledText, StyledViewCenter} from '@app/components/atoms';
+import {Counter} from '@app/components/molecules';
+import {useAppDispatch, useAppSelector} from '@app/store/hooks';
+import {decrement, increment} from '@app/store/reducers/counter';
+import React, {useEffect} from 'react';
 import {View} from 'react-native';
-import {StyledText, StyledViewCenter} from '../../../components';
-import {Counter} from '../../../components/molecules/counter';
-import {useAppDispatch, useAppSelector} from '../../../store';
-import {decrement, increment} from '../../../store/reducers/counter';
+import {showMessage} from 'react-native-flash-message';
 
 export const WelcomeScreen = () => {
   const count = useAppSelector(state => state.counter.value);
@@ -15,6 +16,13 @@ export const WelcomeScreen = () => {
   const handleDecrement = () => {
     dispatch(decrement());
   };
+
+  useEffect(() => {
+    showMessage({
+      type: 'success',
+      message: 'Sign In',
+    });
+  }, []);
 
   return (
     <StyledViewCenter style={{backgroundColor: 'white'}}>

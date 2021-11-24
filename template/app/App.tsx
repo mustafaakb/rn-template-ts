@@ -10,6 +10,7 @@
  */
 
 import React from 'react';
+import FlashMessage from 'react-native-flash-message';
 import {Provider as StoreProvider} from 'react-redux';
 import {AppQueryClientProvider, AxiosProvider} from './api';
 import {AppNavigator} from './navigators';
@@ -21,6 +22,7 @@ const App = () => {
       <AxiosProvider>
         <AppQueryClientProvider>
           <AppNavigator />
+          <FlashMessage position="top" />
         </AppQueryClientProvider>
       </AxiosProvider>
     </StoreProvider>
