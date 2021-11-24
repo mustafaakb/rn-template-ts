@@ -19,7 +19,6 @@ import {sentryConfig} from './utils';
 
 Sentry.init(sentryConfig);
 
-
 const App = () => {
   return (
     <StoreProvider store={store}>

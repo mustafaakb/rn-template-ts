@@ -13,7 +13,7 @@ export const axiosInstance: AxiosInstance = axios.create({
 axiosInstance.interceptors.response.use(
   (response: AxiosResponse) => response,
   (error: AxiosError) => {
-    Sentry.captureException(JSON.stringify(error));
+    Sentry.captureException(error);
     return Promise.reject(error);
   },
 );
