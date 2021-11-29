@@ -12,6 +12,9 @@ target 'HelloWorld' do
     :hermes_enabled => true
   )
 
+  # For extensions without React dependencies
+  pod 'react-native-config/Extension', :path => '../node_modules/react-native-config'
+
   target 'HelloWorldTests' do
     inherit! :complete
     # Pods for testing

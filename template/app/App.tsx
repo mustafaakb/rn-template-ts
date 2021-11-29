@@ -10,6 +10,7 @@
  */
 
 import React from 'react';
+import Config from 'react-native-config';
 import FlashMessage from 'react-native-flash-message';
 import {Provider as StoreProvider} from 'react-redux';
 import {AppQueryClientProvider, AxiosProvider} from './api';
@@ -17,6 +18,7 @@ import {AppNavigator} from './navigators';
 import {store} from './store';
 
 const App = () => {
+  console.log({Config});
   return (
     <StoreProvider store={store}>
       <AxiosProvider>
