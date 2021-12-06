@@ -14,6 +14,7 @@ import Config from 'react-native-config';
 import FlashMessage from 'react-native-flash-message';
 import {Provider as StoreProvider} from 'react-redux';
 import {AppQueryClientProvider, AxiosProvider} from './api';
+import {ApiApolloProvider} from './api/qraphql/apolloProvider';
 import {AppNavigator} from './navigators';
 import {store} from './store';
 
@@ -23,8 +24,10 @@ const App = () => {
     <StoreProvider store={store}>
       <AxiosProvider>
         <AppQueryClientProvider>
-          <AppNavigator />
-          <FlashMessage position="top" />
+          <ApiApolloProvider>
+            <AppNavigator />
+            <FlashMessage position="top" />
+          </ApiApolloProvider>
         </AppQueryClientProvider>
       </AxiosProvider>
     </StoreProvider>
