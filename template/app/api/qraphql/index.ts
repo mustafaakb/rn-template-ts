@@ -1,2 +1,2 @@
-import * as apiGQL from './gqlGetsPosts';
+import * as apiGQL from './gqlQueryMutaion';
 export {apiGQL};
